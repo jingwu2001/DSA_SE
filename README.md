@@ -1,3 +1,8 @@
+To run this program, install processing: https://processing.org
+After opening the app, select file > open,
+navigate to the project folder, and open maze_automove.pde.
+Click the run button, and the program would start.
+
 This program simulates a maze search using two graph traversal algorithms: 
 DFS (depth-first search), and BFS (breadth-first search).
 
