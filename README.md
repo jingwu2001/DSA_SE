@@ -19,7 +19,7 @@ Click the upper left run button, and the program would start.
 The buttons on the right, from top to bottom, allows users to:
 1. **DFS/BFS**: switch between the algorithms used (set to DFS as default),
 2. **Random Pos**: randomly change the starting position,
-3. **Reset**: randomly generate a new maze (the starting position is reset to the bottom left), 
+3. **Reset**: randomly generate a new maze, 
 4. **Pause**: pause the search, and
 5. **Start**: start the search.
 

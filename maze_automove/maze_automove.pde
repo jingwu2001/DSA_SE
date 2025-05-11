@@ -9,8 +9,8 @@ PImage monsterDefeated;
 PImage monsterOriginal;
 PImage playerUp, playerDown, playerLeft, playerRight;
 String playerDir = "D";
-int playerX = 0; // TODO: to be modified, range: 0 ~ mazeSize-1
-int playerY = 29; // TODO: to be modified
+int playerX = int(random(mazeSize));
+int playerY = int(random(mazeSize));
 int moveInterval = 5;
 int lastMoveFrame = 0;
 
@@ -19,7 +19,7 @@ ArrayList<PVector> doorPositions = new ArrayList<PVector>();
 
 boolean dfsFinished = false;
 boolean hasPassedDoor = false;
-boolean BFS = false; // TODO: to be modified
+boolean BFS = false;
 boolean isPaused=false;
 boolean gameStarted = false;
 
@@ -61,18 +61,14 @@ boolean Pause_Pressed = false;
 
 void setup() {
   size(1200, 900, P3D);
-  maze = new int[mazeSize][mazeSize];
   monsterOriginal = loadImage("monster.png");
   monsterDefeated = loadImage("monster_defeated.png");
-  monster=monsterOriginal;
   playerUp = loadImage("player_u.png");
   playerDown = loadImage("player_d.png");
   playerLeft = loadImage("player_l.png");
   playerRight = loadImage("player_r.png");
 
-  initMaze();
-  go(playerX, playerY);
-  deque.push(new PVector(playerX, playerY));
+  resetGame();
   noStroke();
 }
 
@@ -286,8 +282,8 @@ void draw_button()
   }
 }
 void resetGame() {
-  playerX = 0;
-  playerY = 29;
+  playerX = int(random(0, 30));
+  playerY = int(random(0, 30));
   moveInterval = 5;
   lastMoveFrame = 0;
   dfsFinished = false;
@@ -299,6 +295,11 @@ void resetGame() {
   maze = new int[mazeSize][mazeSize];
   roomX = int(random(1, mazeSize - 6));
   roomY = int(random(1, mazeSize - 6));
+
+  while ((roomX <= playerX) && (playerX <= roomX+6) && (roomY <= playerY) && (playerY <= roomY+6)) {
+    playerX = int(random(mazeSize));
+    playerY = int(random(mazeSize));
+  }
 
   initMaze();
   go(playerX, playerY);
