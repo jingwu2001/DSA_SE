@@ -36,3 +36,14 @@ At each intersection the character does not choose one path to explore. Instead,
 
 
 ## Example
+Give the following graph represented as adjacency lists:\
+A: [B, C]\
+B: [D, E]\
+C: [F]\
+D: []\
+E: []\
+F: []
+
+The traversals would be\
+BFS: A -> B -> C -> D -> E -> F\
+DFS: A -> B -> D -> E -> C -> F
