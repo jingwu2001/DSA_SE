@@ -47,3 +47,6 @@ F: []
 The traversals would be\
 BFS: A -> B -> C -> D -> E -> F\
 DFS: A -> B -> D -> E -> C -> F
+
+## Demo
+Here's a video demo of the project: https://youtu.be/yfMud1MOXF0
